@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BusTicketApp
@@ -60,19 +62,20 @@ namespace BusTicketApp
             Passenger p = new Passenger();
             if (radioButtonGenderMale.Checked == true)
             {
-                p.PassengerGender = "Male";
+                p.PassengerGender = "Male"; 
             }
             else { p.PassengerGender = "Female"; }
             writer.WriteLine($"{p.ID = int.Parse(textBoxSeatNumber.Text)};{p.Name = textBoxPassengerName.Text};{p.Surname = textBoxPassengerSurname.Text};{p.TelephoneNumber = textBoxTelephoneNumber.Text};{p.PassengerGender}; ");
             flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].Enabled = false;
-            if (radioButtonGenderMale.Checked == true) { flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Blue; }
-            else { flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Pink; }
+            if (radioButtonGenderMale.Checked == true) { flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Blue; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Men.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }
+            else { flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Pink; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Woman.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }
+        
+           
             passengers.Add(p);
-
             writer.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  
         {
             StreamReader reader = new StreamReader(@"C:\Passenger\p.txt");
             while (!reader.EndOfStream)
