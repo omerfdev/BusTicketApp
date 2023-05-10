@@ -12,27 +12,34 @@ namespace BusTicketApp
         List<Passenger> passengers = new List<Passenger>();
         private void Form1_Load(object sender, EventArgs e)
         {
+
             for (int i = 1; i < 55; i++)
             {
-                Button btn = new Button();
-                btn.Location = new Point(50, 70);
-                btn.Size = new Size(34, 34);
-                btn.Tag = i;
-                btn.Text = "" + i;
-                btn.UseVisualStyleBackColor = true;
-                flowLayoutPanel1.Controls.Add(btn);
-                btn.Click += btn_Click;
-                if (i == 54)
-                {
-                    Label lbl = new Label();
-                    lbl.Location = new Point(60, 70);
-                    lbl.Size = new Size(70, 34);
-                    lbl.Text = "EXIT";
-                    lbl.Font = new Font("Tobota", 15, FontStyle.Regular);
-                    lbl.Tag = i;
-                    lbl.BackColor = Color.YellowGreen;
-                    flowLayoutPanel1.Controls.Add(lbl);
-                }
+                
+                    Button btn = new Button();
+                    btn.Location = new Point(50, 70);
+                    btn.Size = new Size(34, 34);
+                    btn.Margin = new Padding(2);
+                    btn.Tag = i;
+                    btn.Text = "" + i;
+                    btn.UseVisualStyleBackColor = true;
+                    flowLayoutPanel1.Controls.Add(btn);
+                    btn.Click += btn_Click;
+                    if (i %2==0) { btn.Margin = new Padding(0, 2, 30, 0); }
+                    if (i == 54)
+                    {
+                        Label lbl = new Label();
+                        lbl.Location = new Point(60, 70);
+                        lbl.Size = new Size(70, 34);
+                        lbl.Text = "EXIT";
+                        lbl.Font = new Font("Tobota", 15, FontStyle.Regular);
+                        lbl.Tag = i;
+                        lbl.BackColor = Color.YellowGreen;
+                        flowLayoutPanel1.Controls.Add(lbl);
+                    }
+                
+
+
 
             }
         }

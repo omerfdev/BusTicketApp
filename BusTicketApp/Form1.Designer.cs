@@ -48,7 +48,7 @@
             // 
             flowLayoutPanel1.Location = new Point(16, 25);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(173, 569);
+            flowLayoutPanel1.Size = new Size(212, 569);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // groupBoxPassengerInformation
