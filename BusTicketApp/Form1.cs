@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace BusTicketApp
 {
-    public partial class Form1 : Form
+    public partial class BusTicketApp : Form
     {
-        public Form1()
+        public BusTicketApp()
         {
             InitializeComponent();
         }
@@ -41,10 +41,6 @@ namespace BusTicketApp
                     lbl.BackColor = Color.YellowGreen;
                     flowLayoutPanel1.Controls.Add(lbl);
                 }
-
-
-
-
             }
         }
         private void btn_Click(object sender, EventArgs e)
@@ -59,40 +55,45 @@ namespace BusTicketApp
 
             Directory.CreateDirectory(@"C:\Passenger");
             StreamWriter writer = new StreamWriter(@"C:\Passenger\p.txt", true);
-            Passenger p = new Passenger();
+            Passenger p = new Passenger()
+            {
+                Name=textBoxPassengerName.Text,
+                Surname=textBoxPassengerSurname.Text,
+                TelephoneNumber=textBoxTelephoneNumber.Text,
+                
+            };
             if (radioButtonGenderMale.Checked == true)
             {
-                p.PassengerGender = "Male"; 
+                p.PassengerGender = "Male"; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Blue; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Men.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch;
             }
-            else { p.PassengerGender = "Female"; }
-            writer.WriteLine($"{p.ID = int.Parse(textBoxSeatNumber.Text)};{p.Name = textBoxPassengerName.Text};{p.Surname = textBoxPassengerSurname.Text};{p.TelephoneNumber = textBoxTelephoneNumber.Text};{p.PassengerGender}; ");
+            else { p.PassengerGender = "Female"; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Pink; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Woman.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }            
+            writer.WriteLine($"{p.Name = textBoxPassengerName.Text};{p.Surname = textBoxPassengerSurname.Text};{p.TelephoneNumber = textBoxTelephoneNumber.Text};{p.PassengerGender};{p.ID} ");
+
             flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].Enabled = false;
-            if (radioButtonGenderMale.Checked == true) { flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Blue; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Men.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }
-            else { flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Pink; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Woman.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }
-        
-           
             passengers.Add(p);
+            dgwPassenger.DataSource = null;
+            dgwPassenger.DataSource = passengers;
             writer.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)  
+        private void buttonPassengerList_Click(object sender, EventArgs e)
         {
             StreamReader reader = new StreamReader(@"C:\Passenger\p.txt");
             while (!reader.EndOfStream)
             {
                 string line = reader.ReadLine();
                 string[] passenger = line.Split(';');
-                //listBoxPassenger.Items.Add(line);
                 Passenger p = new Passenger();
-                p.ID = int.Parse(passenger[0]);
-                p.Name = passenger[1];
-                p.Surname = passenger[2];
-                p.TelephoneNumber = passenger[3];
-                p.PassengerGender = passenger[4];
+                
+                p.Name = passenger[0];
+                p.Surname = passenger[1];
+                p.TelephoneNumber = passenger[2];
+                p.PassengerGender = passenger[3];
                 passengers.Add(p);
             }
+            dgwPassenger.DataSource = null;
+            dgwPassenger.DataSource = passengers;
             reader.Close();
-            dataGridView1.DataSource = passengers;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BusTicketApp
 {
-    partial class Form1
+    partial class BusTicketApp
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusTicketApp));
             flowLayoutPanel1 = new FlowLayoutPanel();
             groupBoxPassengerInformation = new GroupBox();
-            button1 = new Button();
+            buttonPassengerList = new Button();
             buttonPassengerGet = new Button();
             textBoxSeatNumber = new TextBox();
             radioButtonGenderFemale = new RadioButton();
@@ -39,9 +39,9 @@
             textBoxTelephoneNumber = new TextBox();
             textBoxPassengerSurname = new TextBox();
             textBoxPassengerName = new TextBox();
-            dataGridView1 = new DataGridView();
+            dgwPassenger = new DataGridView();
             groupBoxPassengerInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgwPassenger).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -53,7 +53,7 @@
             // 
             // groupBoxPassengerInformation
             // 
-            groupBoxPassengerInformation.Controls.Add(button1);
+            groupBoxPassengerInformation.Controls.Add(buttonPassengerList);
             groupBoxPassengerInformation.Controls.Add(buttonPassengerGet);
             groupBoxPassengerInformation.Controls.Add(textBoxSeatNumber);
             groupBoxPassengerInformation.Controls.Add(radioButtonGenderFemale);
@@ -70,16 +70,16 @@
             groupBoxPassengerInformation.TabStop = false;
             groupBoxPassengerInformation.Text = "PassengerInformation";
             // 
-            // button1
+            // buttonPassengerList
             // 
-            button1.Location = new Point(256, 255);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(62, 31);
-            button1.TabIndex = 7;
-            button1.Text = "List";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonPassengerList.Location = new Point(256, 255);
+            buttonPassengerList.Margin = new Padding(3, 4, 3, 4);
+            buttonPassengerList.Name = "buttonPassengerList";
+            buttonPassengerList.Size = new Size(62, 31);
+            buttonPassengerList.TabIndex = 7;
+            buttonPassengerList.Text = "List";
+            buttonPassengerList.UseVisualStyleBackColor = true;
+            buttonPassengerList.Click += buttonPassengerList_Click;
             // 
             // buttonPassengerGet
             // 
@@ -155,32 +155,32 @@
             textBoxPassengerName.Size = new Size(247, 27);
             textBoxPassengerName.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgwPassenger
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(583, 35);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(554, 440);
-            dataGridView1.TabIndex = 3;
+            dgwPassenger.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwPassenger.Location = new Point(583, 35);
+            dgwPassenger.Name = "dgwPassenger";
+            dgwPassenger.RowHeadersWidth = 51;
+            dgwPassenger.RowTemplate.Height = 29;
+            dgwPassenger.Size = new Size(554, 440);
+            dgwPassenger.TabIndex = 3;
             // 
-            // Form1
+            // BusTicketApp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1149, 621);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgwPassenger);
             Controls.Add(groupBoxPassengerInformation);
             Controls.Add(flowLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1167, 668);
-            Name = "Form1";
+            Name = "BusTicketApp";
             Text = "BusTicketApp";
             Load += Form1_Load;
             groupBoxPassengerInformation.ResumeLayout(false);
             groupBoxPassengerInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgwPassenger).EndInit();
             ResumeLayout(false);
         }
 
@@ -188,7 +188,7 @@
 
         private FlowLayoutPanel flowLayoutPanel1;
         public GroupBox groupBoxPassengerInformation;
-        private Button button1;
+        private Button buttonPassengerList;
         public Button buttonPassengerGet;
         public TextBox textBoxSeatNumber;
         public RadioButton radioButtonGenderFemale;
@@ -196,6 +196,6 @@
         public TextBox textBoxTelephoneNumber;
         public TextBox textBoxPassengerSurname;
         public TextBox textBoxPassengerName;
-        private DataGridView dataGridView1;
+        private DataGridView dgwPassenger;
     }
 }

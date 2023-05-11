@@ -8,10 +8,13 @@ namespace BusTicketApp
 {
     internal class Passenger
     {
-        public int ID { get; set; }
+       
         public string Name { get; set; }
         public string Surname { get; set; }
         public string TelephoneNumber { get; set; }
         public string PassengerGender { get; set; }
+
+        private string _id;
+        public string ID { get { _id = Name.Substring(0, 1).ToUpper() + TelephoneNumber.Substring(0, 5); return _id; } private set {; } }
     }
 }
