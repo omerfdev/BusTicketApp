@@ -29,78 +29,78 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusTicketApp));
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            groupBoxPassengerInformation = new GroupBox();
-            buttonPassengerList = new Button();
-            buttonPassengerGet = new Button();
-            textBoxSeatNumber = new TextBox();
+            flwPanelSeat = new FlowLayoutPanel();
+            grpBoxPassengerInformation = new GroupBox();
+            btnPassengerList = new Button();
+            btnPassengerGet = new Button();
+            txtBoxSeatNumber = new TextBox();
             radioButtonGenderFemale = new RadioButton();
             radioButtonGenderMale = new RadioButton();
-            textBoxTelephoneNumber = new TextBox();
-            textBoxPassengerSurname = new TextBox();
-            textBoxPassengerName = new TextBox();
+            txtBoxTelephoneNumber = new TextBox();
+            txtBoxPassengerSurname = new TextBox();
+            txtBoxPassengerName = new TextBox();
             dgwPassenger = new DataGridView();
-            groupBoxPassengerInformation.SuspendLayout();
+            grpBoxPassengerInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgwPassenger).BeginInit();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flwPanelSeat
             // 
-            flowLayoutPanel1.Location = new Point(16, 25);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(212, 569);
-            flowLayoutPanel1.TabIndex = 0;
+            flwPanelSeat.Location = new Point(16, 25);
+            flwPanelSeat.Name = "flwPanelSeat";
+            flwPanelSeat.Size = new Size(212, 569);
+            flwPanelSeat.TabIndex = 0;
             // 
-            // groupBoxPassengerInformation
+            // grpBoxPassengerInformation
             // 
-            groupBoxPassengerInformation.Controls.Add(buttonPassengerList);
-            groupBoxPassengerInformation.Controls.Add(buttonPassengerGet);
-            groupBoxPassengerInformation.Controls.Add(textBoxSeatNumber);
-            groupBoxPassengerInformation.Controls.Add(radioButtonGenderFemale);
-            groupBoxPassengerInformation.Controls.Add(radioButtonGenderMale);
-            groupBoxPassengerInformation.Controls.Add(textBoxTelephoneNumber);
-            groupBoxPassengerInformation.Controls.Add(textBoxPassengerSurname);
-            groupBoxPassengerInformation.Controls.Add(textBoxPassengerName);
-            groupBoxPassengerInformation.Location = new Point(234, 25);
-            groupBoxPassengerInformation.Margin = new Padding(3, 4, 3, 4);
-            groupBoxPassengerInformation.Name = "groupBoxPassengerInformation";
-            groupBoxPassengerInformation.Padding = new Padding(3, 4, 3, 4);
-            groupBoxPassengerInformation.Size = new Size(343, 293);
-            groupBoxPassengerInformation.TabIndex = 2;
-            groupBoxPassengerInformation.TabStop = false;
-            groupBoxPassengerInformation.Text = "PassengerInformation";
+            grpBoxPassengerInformation.Controls.Add(btnPassengerList);
+            grpBoxPassengerInformation.Controls.Add(btnPassengerGet);
+            grpBoxPassengerInformation.Controls.Add(txtBoxSeatNumber);
+            grpBoxPassengerInformation.Controls.Add(radioButtonGenderFemale);
+            grpBoxPassengerInformation.Controls.Add(radioButtonGenderMale);
+            grpBoxPassengerInformation.Controls.Add(txtBoxTelephoneNumber);
+            grpBoxPassengerInformation.Controls.Add(txtBoxPassengerSurname);
+            grpBoxPassengerInformation.Controls.Add(txtBoxPassengerName);
+            grpBoxPassengerInformation.Location = new Point(234, 25);
+            grpBoxPassengerInformation.Margin = new Padding(3, 4, 3, 4);
+            grpBoxPassengerInformation.Name = "grpBoxPassengerInformation";
+            grpBoxPassengerInformation.Padding = new Padding(3, 4, 3, 4);
+            grpBoxPassengerInformation.Size = new Size(343, 293);
+            grpBoxPassengerInformation.TabIndex = 2;
+            grpBoxPassengerInformation.TabStop = false;
+            grpBoxPassengerInformation.Text = "PassengerInformation";
             // 
-            // buttonPassengerList
+            // btnPassengerList
             // 
-            buttonPassengerList.Location = new Point(256, 255);
-            buttonPassengerList.Margin = new Padding(3, 4, 3, 4);
-            buttonPassengerList.Name = "buttonPassengerList";
-            buttonPassengerList.Size = new Size(62, 31);
-            buttonPassengerList.TabIndex = 7;
-            buttonPassengerList.Text = "List";
-            buttonPassengerList.UseVisualStyleBackColor = true;
-            buttonPassengerList.Click += buttonPassengerList_Click;
+            btnPassengerList.Location = new Point(256, 255);
+            btnPassengerList.Margin = new Padding(3, 4, 3, 4);
+            btnPassengerList.Name = "btnPassengerList";
+            btnPassengerList.Size = new Size(62, 31);
+            btnPassengerList.TabIndex = 7;
+            btnPassengerList.Text = "List";
+            btnPassengerList.UseVisualStyleBackColor = true;
+            btnPassengerList.Click += buttonPassengerList_Click;
             // 
-            // buttonPassengerGet
+            // btnPassengerGet
             // 
-            buttonPassengerGet.AutoEllipsis = true;
-            buttonPassengerGet.Location = new Point(256, 220);
-            buttonPassengerGet.Margin = new Padding(3, 4, 3, 4);
-            buttonPassengerGet.Name = "buttonPassengerGet";
-            buttonPassengerGet.Size = new Size(62, 31);
-            buttonPassengerGet.TabIndex = 6;
-            buttonPassengerGet.Text = "Get";
-            buttonPassengerGet.UseVisualStyleBackColor = true;
-            buttonPassengerGet.Click += buttonPassengerGet_Click;
+            btnPassengerGet.AutoEllipsis = true;
+            btnPassengerGet.Location = new Point(256, 220);
+            btnPassengerGet.Margin = new Padding(3, 4, 3, 4);
+            btnPassengerGet.Name = "btnPassengerGet";
+            btnPassengerGet.Size = new Size(62, 31);
+            btnPassengerGet.TabIndex = 6;
+            btnPassengerGet.Text = "Get";
+            btnPassengerGet.UseVisualStyleBackColor = true;
+            btnPassengerGet.Click += buttonPassengerGet_Click;
             // 
-            // textBoxSeatNumber
+            // txtBoxSeatNumber
             // 
-            textBoxSeatNumber.Location = new Point(130, 220);
-            textBoxSeatNumber.Margin = new Padding(3, 4, 3, 4);
-            textBoxSeatNumber.Name = "textBoxSeatNumber";
-            textBoxSeatNumber.PlaceholderText = "Seat Number";
-            textBoxSeatNumber.Size = new Size(94, 27);
-            textBoxSeatNumber.TabIndex = 5;
+            txtBoxSeatNumber.Location = new Point(130, 220);
+            txtBoxSeatNumber.Margin = new Padding(3, 4, 3, 4);
+            txtBoxSeatNumber.Name = "txtBoxSeatNumber";
+            txtBoxSeatNumber.PlaceholderText = "Seat Number";
+            txtBoxSeatNumber.Size = new Size(94, 27);
+            txtBoxSeatNumber.TabIndex = 5;
             // 
             // radioButtonGenderFemale
             // 
@@ -128,32 +128,32 @@
             radioButtonGenderMale.Text = "Male";
             radioButtonGenderMale.UseVisualStyleBackColor = true;
             // 
-            // textBoxTelephoneNumber
+            // txtBoxTelephoneNumber
             // 
-            textBoxTelephoneNumber.Location = new Point(66, 135);
-            textBoxTelephoneNumber.Margin = new Padding(3, 4, 3, 4);
-            textBoxTelephoneNumber.Name = "textBoxTelephoneNumber";
-            textBoxTelephoneNumber.PlaceholderText = "Telephone Number";
-            textBoxTelephoneNumber.Size = new Size(247, 27);
-            textBoxTelephoneNumber.TabIndex = 2;
+            txtBoxTelephoneNumber.Location = new Point(66, 135);
+            txtBoxTelephoneNumber.Margin = new Padding(3, 4, 3, 4);
+            txtBoxTelephoneNumber.Name = "txtBoxTelephoneNumber";
+            txtBoxTelephoneNumber.PlaceholderText = "Telephone Number";
+            txtBoxTelephoneNumber.Size = new Size(247, 27);
+            txtBoxTelephoneNumber.TabIndex = 2;
             // 
-            // textBoxPassengerSurname
+            // txtBoxPassengerSurname
             // 
-            textBoxPassengerSurname.Location = new Point(66, 91);
-            textBoxPassengerSurname.Margin = new Padding(3, 4, 3, 4);
-            textBoxPassengerSurname.Name = "textBoxPassengerSurname";
-            textBoxPassengerSurname.PlaceholderText = "Passenger Surname";
-            textBoxPassengerSurname.Size = new Size(247, 27);
-            textBoxPassengerSurname.TabIndex = 1;
+            txtBoxPassengerSurname.Location = new Point(66, 91);
+            txtBoxPassengerSurname.Margin = new Padding(3, 4, 3, 4);
+            txtBoxPassengerSurname.Name = "txtBoxPassengerSurname";
+            txtBoxPassengerSurname.PlaceholderText = "Passenger Surname";
+            txtBoxPassengerSurname.Size = new Size(247, 27);
+            txtBoxPassengerSurname.TabIndex = 1;
             // 
-            // textBoxPassengerName
+            // txtBoxPassengerName
             // 
-            textBoxPassengerName.Location = new Point(66, 45);
-            textBoxPassengerName.Margin = new Padding(3, 4, 3, 4);
-            textBoxPassengerName.Name = "textBoxPassengerName";
-            textBoxPassengerName.PlaceholderText = "Passenger Name";
-            textBoxPassengerName.Size = new Size(247, 27);
-            textBoxPassengerName.TabIndex = 0;
+            txtBoxPassengerName.Location = new Point(66, 45);
+            txtBoxPassengerName.Margin = new Padding(3, 4, 3, 4);
+            txtBoxPassengerName.Name = "txtBoxPassengerName";
+            txtBoxPassengerName.PlaceholderText = "Passenger Name";
+            txtBoxPassengerName.Size = new Size(247, 27);
+            txtBoxPassengerName.TabIndex = 0;
             // 
             // dgwPassenger
             // 
@@ -171,31 +171,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1149, 621);
             Controls.Add(dgwPassenger);
-            Controls.Add(groupBoxPassengerInformation);
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(grpBoxPassengerInformation);
+            Controls.Add(flwPanelSeat);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximumSize = new Size(1167, 668);
             Name = "BusTicketApp";
             Text = "BusTicketApp";
             Load += Form1_Load;
-            groupBoxPassengerInformation.ResumeLayout(false);
-            groupBoxPassengerInformation.PerformLayout();
+            grpBoxPassengerInformation.ResumeLayout(false);
+            grpBoxPassengerInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgwPassenger).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FlowLayoutPanel flowLayoutPanel1;
-        public GroupBox groupBoxPassengerInformation;
-        private Button buttonPassengerList;
-        public Button buttonPassengerGet;
-        public TextBox textBoxSeatNumber;
+        private FlowLayoutPanel flwPanelSeat;
+        public GroupBox grpBoxPassengerInformation;
+        private Button btnPassengerList;
+        public Button btnPassengerGet;
+        public TextBox txtBoxSeatNumber;
         public RadioButton radioButtonGenderFemale;
         public RadioButton radioButtonGenderMale;
-        public TextBox textBoxTelephoneNumber;
-        public TextBox textBoxPassengerSurname;
-        public TextBox textBoxPassengerName;
+        public TextBox txtBoxTelephoneNumber;
+        public TextBox txtBoxPassengerSurname;
+        public TextBox txtBoxPassengerName;
         private DataGridView dgwPassenger;
     }
 }

@@ -25,7 +25,7 @@ namespace BusTicketApp
                 btn.Tag = i;
                 btn.Text = "" + i;
                 btn.UseVisualStyleBackColor = true;
-                flowLayoutPanel1.Controls.Add(btn);
+                flwPanelSeat.Controls.Add(btn);
                 btn.Click += btn_Click;
                 if (i % 2 == 0) { btn.Margin = new Padding(0, 2, 30, 0); }
                 if (i == 54)
@@ -39,7 +39,7 @@ namespace BusTicketApp
                     lbl.TextAlign = ContentAlignment.MiddleCenter;
                     lbl.BorderStyle = BorderStyle.FixedSingle;
                     lbl.BackColor = Color.YellowGreen;
-                    flowLayoutPanel1.Controls.Add(lbl);
+                    flwPanelSeat.Controls.Add(lbl);
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace BusTicketApp
         {
             if (sender is Button btn)
             {
-                textBoxSeatNumber.Text = btn.Tag.ToString();
+                txtBoxSeatNumber.Text = btn.Tag.ToString();
             }
         }
         private void buttonPassengerGet_Click(object sender, EventArgs e)
@@ -57,19 +57,19 @@ namespace BusTicketApp
             StreamWriter writer = new StreamWriter(@"C:\Passenger\p.txt", true);
             Passenger p = new Passenger()
             {
-                Name=textBoxPassengerName.Text,
-                Surname=textBoxPassengerSurname.Text,
-                TelephoneNumber=textBoxTelephoneNumber.Text,
-                
+                Name = txtBoxPassengerName.Text,
+                Surname = txtBoxPassengerSurname.Text,
+                TelephoneNumber = txtBoxTelephoneNumber.Text,
+
             };
             if (radioButtonGenderMale.Checked == true)
             {
-                p.PassengerGender = "Male"; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Blue; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Men.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch;
+                p.PassengerGender = "Male"; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackColor = Color.Blue; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Men.png"); flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch;
             }
-            else { p.PassengerGender = "Female"; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackColor = Color.Pink; flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Woman.png"); flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }            
-            writer.WriteLine($"{p.Name = textBoxPassengerName.Text};{p.Surname = textBoxPassengerSurname.Text};{p.TelephoneNumber = textBoxTelephoneNumber.Text};{p.PassengerGender};{p.ID} ");
+            else { p.PassengerGender = "Female"; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackColor = Color.Pink; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Woman.png"); flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }
+            writer.WriteLine($"{p.Name = txtBoxPassengerName.Text};{p.Surname = txtBoxPassengerSurname.Text};{p.TelephoneNumber = txtBoxTelephoneNumber.Text};{p.PassengerGender};{p.ID} ");
 
-            flowLayoutPanel1.Controls[int.Parse(textBoxSeatNumber.Text) - 1].Enabled = false;
+            flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].Enabled = false;
             passengers.Add(p);
             dgwPassenger.DataSource = null;
             dgwPassenger.DataSource = passengers;
@@ -84,7 +84,7 @@ namespace BusTicketApp
                 string line = reader.ReadLine();
                 string[] passenger = line.Split(';');
                 Passenger p = new Passenger();
-                
+
                 p.Name = passenger[0];
                 p.Surname = passenger[1];
                 p.TelephoneNumber = passenger[2];
