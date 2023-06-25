@@ -59,7 +59,7 @@ namespace BusTicketApp
             {
                 Name = txtBoxPassengerName.Text,
                 Surname = txtBoxPassengerSurname.Text,
-                TelephoneNumber = txtBoxTelephoneNumber.Text,
+                TelephoneNumber = mskBoxPhoneNumber.Text,
 
             };
             if (radioButtonGenderMale.Checked == true)
@@ -67,7 +67,7 @@ namespace BusTicketApp
                 p.PassengerGender = "Male"; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackColor = Color.Blue; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Men.png"); flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch;
             }
             else { p.PassengerGender = "Female"; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackColor = Color.Pink; flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImage = Image.FromFile(@"C:\Users\omerf\source\repos\BusTicketApp\BusTicketApp\ico\Woman.png"); flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].BackgroundImageLayout = ImageLayout.Stretch; }
-            writer.WriteLine($"{p.Name = txtBoxPassengerName.Text};{p.Surname = txtBoxPassengerSurname.Text};{p.TelephoneNumber = txtBoxTelephoneNumber.Text};{p.PassengerGender};{p.ID} ");
+            writer.WriteLine($"{p.Name = txtBoxPassengerName.Text};{p.Surname = txtBoxPassengerSurname.Text};{p.TelephoneNumber =mskBoxPhoneNumber.Text};{p.PassengerGender};{p.ID} ");
 
             flwPanelSeat.Controls[int.Parse(txtBoxSeatNumber.Text) - 1].Enabled = false;
             passengers.Add(p);
@@ -78,6 +78,7 @@ namespace BusTicketApp
 
         private void buttonPassengerList_Click(object sender, EventArgs e)
         {
+            dgwPassenger.DataSource = null;
             StreamReader reader = new StreamReader(@"C:\Passenger\p.txt");
             while (!reader.EndOfStream)
             {
@@ -91,7 +92,7 @@ namespace BusTicketApp
                 p.PassengerGender = passenger[3];
                 passengers.Add(p);
             }
-            dgwPassenger.DataSource = null;
+           
             dgwPassenger.DataSource = passengers;
             reader.Close();
         }

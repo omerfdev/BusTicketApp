@@ -36,10 +36,10 @@
             txtBoxSeatNumber = new TextBox();
             radioButtonGenderFemale = new RadioButton();
             radioButtonGenderMale = new RadioButton();
-            txtBoxTelephoneNumber = new TextBox();
             txtBoxPassengerSurname = new TextBox();
             txtBoxPassengerName = new TextBox();
             dgwPassenger = new DataGridView();
+            mskBoxPhoneNumber = new MaskedTextBox();
             grpBoxPassengerInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgwPassenger).BeginInit();
             SuspendLayout();
@@ -53,12 +53,12 @@
             // 
             // grpBoxPassengerInformation
             // 
+            grpBoxPassengerInformation.Controls.Add(mskBoxPhoneNumber);
             grpBoxPassengerInformation.Controls.Add(btnPassengerList);
             grpBoxPassengerInformation.Controls.Add(btnPassengerGet);
             grpBoxPassengerInformation.Controls.Add(txtBoxSeatNumber);
             grpBoxPassengerInformation.Controls.Add(radioButtonGenderFemale);
             grpBoxPassengerInformation.Controls.Add(radioButtonGenderMale);
-            grpBoxPassengerInformation.Controls.Add(txtBoxTelephoneNumber);
             grpBoxPassengerInformation.Controls.Add(txtBoxPassengerSurname);
             grpBoxPassengerInformation.Controls.Add(txtBoxPassengerName);
             grpBoxPassengerInformation.Location = new Point(234, 25);
@@ -72,7 +72,7 @@
             // 
             // btnPassengerList
             // 
-            btnPassengerList.Location = new Point(256, 255);
+            btnPassengerList.Location = new Point(211, 254);
             btnPassengerList.Margin = new Padding(3, 4, 3, 4);
             btnPassengerList.Name = "btnPassengerList";
             btnPassengerList.Size = new Size(62, 31);
@@ -84,7 +84,7 @@
             // btnPassengerGet
             // 
             btnPassengerGet.AutoEllipsis = true;
-            btnPassengerGet.Location = new Point(256, 220);
+            btnPassengerGet.Location = new Point(211, 219);
             btnPassengerGet.Margin = new Padding(3, 4, 3, 4);
             btnPassengerGet.Name = "btnPassengerGet";
             btnPassengerGet.Size = new Size(62, 31);
@@ -95,7 +95,7 @@
             // 
             // txtBoxSeatNumber
             // 
-            txtBoxSeatNumber.Location = new Point(130, 220);
+            txtBoxSeatNumber.Location = new Point(93, 220);
             txtBoxSeatNumber.Margin = new Padding(3, 4, 3, 4);
             txtBoxSeatNumber.Name = "txtBoxSeatNumber";
             txtBoxSeatNumber.PlaceholderText = "Seat Number";
@@ -106,7 +106,7 @@
             // 
             radioButtonGenderFemale.AutoSize = true;
             radioButtonGenderFemale.ForeColor = Color.DarkSalmon;
-            radioButtonGenderFemale.Location = new Point(179, 184);
+            radioButtonGenderFemale.Location = new Point(142, 184);
             radioButtonGenderFemale.Margin = new Padding(3, 4, 3, 4);
             radioButtonGenderFemale.Name = "radioButtonGenderFemale";
             radioButtonGenderFemale.Size = new Size(78, 24);
@@ -119,7 +119,7 @@
             // 
             radioButtonGenderMale.AutoSize = true;
             radioButtonGenderMale.ForeColor = SystemColors.ActiveCaption;
-            radioButtonGenderMale.Location = new Point(103, 184);
+            radioButtonGenderMale.Location = new Point(66, 184);
             radioButtonGenderMale.Margin = new Padding(3, 4, 3, 4);
             radioButtonGenderMale.Name = "radioButtonGenderMale";
             radioButtonGenderMale.Size = new Size(63, 24);
@@ -128,22 +128,13 @@
             radioButtonGenderMale.Text = "Male";
             radioButtonGenderMale.UseVisualStyleBackColor = true;
             // 
-            // txtBoxTelephoneNumber
-            // 
-            txtBoxTelephoneNumber.Location = new Point(66, 135);
-            txtBoxTelephoneNumber.Margin = new Padding(3, 4, 3, 4);
-            txtBoxTelephoneNumber.Name = "txtBoxTelephoneNumber";
-            txtBoxTelephoneNumber.PlaceholderText = "Telephone Number";
-            txtBoxTelephoneNumber.Size = new Size(247, 27);
-            txtBoxTelephoneNumber.TabIndex = 2;
-            // 
             // txtBoxPassengerSurname
             // 
             txtBoxPassengerSurname.Location = new Point(66, 91);
             txtBoxPassengerSurname.Margin = new Padding(3, 4, 3, 4);
             txtBoxPassengerSurname.Name = "txtBoxPassengerSurname";
             txtBoxPassengerSurname.PlaceholderText = "Passenger Surname";
-            txtBoxPassengerSurname.Size = new Size(247, 27);
+            txtBoxPassengerSurname.Size = new Size(207, 27);
             txtBoxPassengerSurname.TabIndex = 1;
             // 
             // txtBoxPassengerName
@@ -152,7 +143,7 @@
             txtBoxPassengerName.Margin = new Padding(3, 4, 3, 4);
             txtBoxPassengerName.Name = "txtBoxPassengerName";
             txtBoxPassengerName.PlaceholderText = "Passenger Name";
-            txtBoxPassengerName.Size = new Size(247, 27);
+            txtBoxPassengerName.Size = new Size(207, 27);
             txtBoxPassengerName.TabIndex = 0;
             // 
             // dgwPassenger
@@ -164,6 +155,14 @@
             dgwPassenger.RowTemplate.Height = 29;
             dgwPassenger.Size = new Size(554, 440);
             dgwPassenger.TabIndex = 3;
+            // 
+            // mskBoxPhoneNumber
+            // 
+            mskBoxPhoneNumber.Location = new Point(66, 135);
+            mskBoxPhoneNumber.Mask = "(999) 000-0000";
+            mskBoxPhoneNumber.Name = "mskBoxPhoneNumber";
+            mskBoxPhoneNumber.Size = new Size(207, 27);
+            mskBoxPhoneNumber.TabIndex = 8;
             // 
             // BusTicketApp
             // 
@@ -193,9 +192,9 @@
         public TextBox txtBoxSeatNumber;
         public RadioButton radioButtonGenderFemale;
         public RadioButton radioButtonGenderMale;
-        public TextBox txtBoxTelephoneNumber;
         public TextBox txtBoxPassengerSurname;
         public TextBox txtBoxPassengerName;
         private DataGridView dgwPassenger;
+        private MaskedTextBox mskBoxPhoneNumber;
     }
 }
